@@ -67,9 +67,7 @@ mathOperators.forEach(mathOperator => {
                                     
         }}
         else{
-            secondNumber=Number(display.innerHTML);
-            // display.innerHTML='';
-            
+            secondNumber=Number(display.innerHTML);            
             display.innerText=`${(operate(operatorSign,firstNumber,secondNumber))}`;
             firstNumber=Number(display.innerHTML);
             i=1;
@@ -96,12 +94,17 @@ mathOperators.forEach(mathOperator => {
 
 const equal=document.getElementById('equal');
 equal.addEventListener('click', event => {
+    i=1;
     secondNumber=Number(display.innerHTML);
     display.innerText=`${(operate(operatorSign,firstNumber,secondNumber))}`;
+    firstNumber=Number(display.innerHTML);
+    operatorSign='';    
 });
 
 const clear=document.getElementById('clear');
 clear.addEventListener('click', event => {
+    firstNumber='';
+    secondNumber='';
     operatorSign='';
     display.innerHTML='';
 });

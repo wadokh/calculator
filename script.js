@@ -71,7 +71,23 @@ mathOperators.forEach(mathOperator => {
             // display.innerHTML='';
             
             display.innerText=`${(operate(operatorSign,firstNumber,secondNumber))}`;
-            operatorSign='';
+            firstNumber=Number(display.innerHTML);
+            i=1;
+            switch (mathsymbol){
+                case '+':
+                    operatorSign=add;
+                    break;
+                case '-':
+                    operatorSign=subtract;
+                    break;
+                case 'x':
+                    operatorSign=multiply;
+                    break;
+                case '÷':
+                    operatorSign=divide;
+                    break;
+                                        
+            }
         }
    });
 
